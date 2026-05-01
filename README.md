@@ -1,6 +1,6 @@
 # DailyQuote Discord Bot 🤖
 
-A lightweight Python Discord bot that automatically selects a random message from a designated "quotes" channel and posts it to a "Quote of the Day" channel once every 24 hours.
+A Python Discord bot that automatically selects a random message from a designated "quotes" channel and posts it to a "Quote of the Day" channel once every 24 hours.
 
 ## 🚀 Features
 * **Automated Scheduling:** Uses `discord.ext.tasks` to run a 24-hour loop.
@@ -16,10 +16,11 @@ A lightweight Python Discord bot that automatically selects a random message fro
 
 ## 📋 Setup & Installation
 
-### 1. Local Configuration
+### Local Configuration
 1. Clone the repository
 2. Create a .env file in the root directory:
-    DISCORD_TOKEN = your_token_here
-    QUOTES_CHANNELID = your_quotes_channel_id
-    DAILY_QUOTE_CHANNELID = your_daily_quote_channel_id
-3. Run python main.py
+```text
+DISCORD_TOKEN = your_token_here
+QUOTES_CHANNELID = your_quotes_channel_id
+DAILY_QUOTE_CHANNELID = your_daily_quote_channel_id
+4. Run python main.py
