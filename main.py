@@ -10,8 +10,11 @@ client = discord.Client(intents=intents)
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
-OUT_OF_CONTEXT_CHANNELID = 1499200347518795877
-DAILY_QUOTE_CHANNELID = 1499833472020119597
+QUOTES_CHANNELID = int(os.getenv('QUOTES_CHANNELID'))
+DAILY_QUOTE_CHANNELID = int(os.getenv('DAILY_QUOTE_CHANNELID'))
+
+print(TOKEN)
+print(QUOTES_CHANNELID, type(QUOTES_CHANNELID))
 
 @client.event
 async def on_ready():
@@ -23,16 +26,16 @@ async def on_ready():
 @tasks.loop(seconds=5)
 async def daily_quote():
     try:
-        ooc_channel = client.get_channel(OUT_OF_CONTEXT_CHANNELID)
-        quote_channel = client.get_channel(DAILY_QUOTE_CHANNELID)
+        quotes_channel = client.get_channel(QUOTES_CHANNELID)
+        daily_quote_channel = client.get_channel(DAILY_QUOTE_CHANNELID)
 
         messages = []
-        async for message in ooc_channel.history(limit=1000):
+        async for message in quotes_channel.history(limit=1000):
             if message.content.strip() != "" and "-" in message.content:
                 messages.append(message.content)
 
         chosen_quote = random.choice(messages)
-        await quote_channel.send(chosen_quote)
+        await daily_quote_channel.send(chosen_quote)
     
     except Exception as e:
         print(f'An error occured: {e}')
