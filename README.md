@@ -5,8 +5,8 @@ A Python Discord bot that automatically selects a random message from a designat
 ## 🚀 Features
 * **Automated Scheduling:** Uses `discord.ext.tasks` to run a 24-hour loop.
 * **Random Selection:** Fetches message history and picks a quote at random.
-* **Cloud Ready:** Optimized for 24/7 hosting on a VPS (Oracle Cloud/Ubuntu) using PM2.
 * **Environment Security:** Uses `.env` files to keep Discord tokens and Channel IDs private.
+* **Cloud Ready:** Optimized for 24/7 hosting on a VPS (Oracle Cloud/Ubuntu) using PM2.
 
 ## 🛠 Tech Stack
 * **Language:** Python 3.x
