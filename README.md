@@ -17,6 +17,18 @@ A Python Discord bot that automatically selects a random message from a designat
 ## 📋 Setup & Installation
 
 ### Local Configuration
+
+**A. Discord Developer Portal Setup**
+1. Create a new Application at the [Discord Developer Portal](https://discord.com/developers/applications).
+2. Under the **Bot** tab:
+   * **Privileged Gateway Intents:** Toggle **ON** the `Message Content Intent`.
+   * Reset/Copy your **Bot Token** for the next step.
+3. Under the **OAuth2 > URL Generator** tab:
+   * **Scopes:** Select `bot`.
+   * **Bot Permissions:** Select `Read Messages/View Channels`, `Send Messages`, and `Read Message History`.
+   * Use the generated URL to invite the bot to your server.
+
+**B. Project Environment**
 1. Clone the repository
 2. Create a .env file in the root directory:  
 DISCORD_TOKEN = your_token_here  
