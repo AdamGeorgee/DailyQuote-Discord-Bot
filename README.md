@@ -19,7 +19,7 @@ A Python Discord bot that automatically selects a random message from a designat
 ### Local Configuration
 1. Clone the repository
 2. Create a .env file in the root directory:
-  > DISCORD_TOKEN = your_token_here
-  > QUOTES_CHANNELID = your_quotes_channel_id
-  > DAILY_QUOTE_CHANNELID = your_daily_quote_channel_id
+* DISCORD_TOKEN = your_token_here
+* QUOTES_CHANNELID = your_quotes_channel_id
+* DAILY_QUOTE_CHANNELID = your_daily_quote_channel_id
 4. Run python main.py
