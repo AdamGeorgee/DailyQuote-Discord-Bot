@@ -13,9 +13,6 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 QUOTES_CHANNELID = int(os.getenv('QUOTES_CHANNELID'))
 DAILY_QUOTE_CHANNELID = int(os.getenv('DAILY_QUOTE_CHANNELID'))
 
-print(TOKEN)
-print(QUOTES_CHANNELID, type(QUOTES_CHANNELID))
-
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}')
