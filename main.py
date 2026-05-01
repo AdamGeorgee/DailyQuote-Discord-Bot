@@ -11,7 +11,7 @@ client = discord.Client(intents=intents)
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 OUT_OF_CONTEXT_CHANNELID = 1499200347518795877
-DAILY_QUOTE_CHANNELID = 1499200716869472348
+DAILY_QUOTE_CHANNELID = 1499833472020119597
 
 @client.event
 async def on_ready():
@@ -20,7 +20,7 @@ async def on_ready():
     if not daily_quote.is_running():
         daily_quote.start()
 
-@tasks.loop(hours=24)
+@tasks.loop(seconds=5)
 async def daily_quote():
     try:
         ooc_channel = client.get_channel(OUT_OF_CONTEXT_CHANNELID)
