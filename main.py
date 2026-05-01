@@ -23,7 +23,7 @@ async def on_ready():
     if not daily_quote.is_running():
         daily_quote.start()
 
-@tasks.loop(seconds=5)
+@tasks.loop(hours=24)
 async def daily_quote():
     try:
         quotes_channel = client.get_channel(QUOTES_CHANNELID)
