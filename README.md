@@ -38,4 +38,4 @@ DAILY_QUOTE_CHANNELID = your_daily_quote_channel_id
 ```
 
 
-4. Run python main.py
+3. Run python main.py
