@@ -9,7 +9,7 @@ A Python Discord bot that automatically selects a random message from a designat
 * **Cloud Ready:** Optimized for 24/7 hosting on a VPS (Oracle Cloud/Ubuntu) using PM2.
 
 ## Tech Stack
-* **Language:** Python 3.x
+* **Language:** Python
 * **Library:** [discord.py](https://github.com/Rapptz/discord.py)
 * **Process Manager:** [PM2](https://pm2.keymetrics.io/)
 * **Hosting:** Oracle Cloud (Ubuntu 24.04)
