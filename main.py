@@ -23,7 +23,7 @@ async def on_ready():
 
 used_messages = set()
 
-@tasks.loop(seconds=5)
+@tasks.loop(hours=24)
 async def daily_quote():
     quotes_channel = client.get_channel(QUOTES_CHANNELID)
     daily_quote_channel = client.get_channel(DAILY_QUOTE_CHANNELID)
