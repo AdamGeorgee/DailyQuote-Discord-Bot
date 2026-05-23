@@ -20,21 +20,25 @@ async def on_ready():
     if not daily_quote.is_running():
         daily_quote.start()
 
-@tasks.loop(hours=24)
-async def daily_quote():
-    try:
-        quotes_channel = client.get_channel(QUOTES_CHANNELID)
-        daily_quote_channel = client.get_channel(DAILY_QUOTE_CHANNELID)
 
-        messages = []
-        async for message in quotes_channel.history(limit=1000):
-            if message.content.strip() != "" and "-" in message.content:
+used_messages = set()
+
+@tasks.loop(seconds=5)
+async def daily_quote():
+    quotes_channel = client.get_channel(QUOTES_CHANNELID)
+    daily_quote_channel = client.get_channel(DAILY_QUOTE_CHANNELID)
+
+    messages = []
+    async for message in quotes_channel.history(limit=1000):
+        if message.content.strip() != "" and "-" in message.content:
+            if message.content not in used_messages:
                 messages.append(message.content)
 
-        chosen_quote = random.choice(messages)
-        await daily_quote_channel.send(chosen_quote)
-    
-    except Exception as e:
-        print(f'An error occured: {e}')
+    if not messages:
+        return
+
+    chosen_quote = random.choice(messages)
+    used_messages.add(chosen_quote)
+    await daily_quote_channel.send(chosen_quote)
         
 client.run(TOKEN)
